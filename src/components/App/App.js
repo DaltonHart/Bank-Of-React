@@ -6,11 +6,8 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		user: {},
-		activeItem: 'Transactions'
+		user: {}
 	};
-
-	handleItemClick = (e, { name }) => this.setState({ activeItem: name });
 
 	fetchUser = () => {
 		fetch(`https://bank-of-react-api.herokuapp.com/me`)
@@ -23,24 +20,20 @@ class App extends Component {
 		this.fetchUser();
 	}
 
-	render() {
-		const { activeItem, user } = this.state;
+	updateUser = userupdated => {
+		this.setState({
+			user: userupdated
+		});
+	};
 
-		let views =
-			activeItem === 'Transactions' ? (
-				<TransactionContainer />
-			) : (
-				<Profile user={user} />
-			);
+	render() {
+		const { user } = this.state;
 
 		return (
 			<div className="app">
-				<Nav
-					handleItemClick={this.handleItemClick}
-					activeItem={this.state.activeItem}
-				/>
+				<Nav user={user} />
 				<div className="container">
-					<Profile user={user} />
+					<Profile user={user} updateUser={this.updateUser} />
 					<TransactionContainer />
 				</div>
 			</div>
