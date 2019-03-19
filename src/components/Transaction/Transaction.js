@@ -14,7 +14,7 @@ class Transaction extends Component {
 						<Label color="red" attached="top right">
 							{type}
 						</Label>
-						{transaction.amount}
+						$ {transaction.amount}
 					</Card.Header>
 				</Card.Content>
 				<Card.Content description={transaction.description} />

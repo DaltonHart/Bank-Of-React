@@ -6,7 +6,7 @@ import './App.css';
 
 class App extends Component {
 	state = {
-		user: null,
+		user: {},
 		activeItem: 'Transactions'
 	};
 
@@ -24,10 +24,14 @@ class App extends Component {
 	}
 
 	render() {
-		const { activeItem } = this.state;
+		const { activeItem, user } = this.state;
 
 		let views =
-			activeItem === 'Transactions' ? <TransactionContainer /> : <Profile />;
+			activeItem === 'Transactions' ? (
+				<TransactionContainer />
+			) : (
+				<Profile user={user} />
+			);
 
 		return (
 			<div className="app">
@@ -35,7 +39,10 @@ class App extends Component {
 					handleItemClick={this.handleItemClick}
 					activeItem={this.state.activeItem}
 				/>
-				{views}
+				<div className="container">
+					<Profile user={user} />
+					<TransactionContainer />
+				</div>
 			</div>
 		);
 	}

@@ -63,10 +63,16 @@ class TransactionContainer extends Component {
 		});
 
 		return (
-			<Segment className="transactionContainer">
-				{debits}
-				{credits}
-			</Segment>
+			<div className="transactionContainer">
+				<Segment.Group className="transactions">
+					<Segment>Header</Segment>
+					<Segment.Group>{debits}</Segment.Group>
+				</Segment.Group>
+				<Segment.Group className="transactions">
+					<Segment>Header</Segment>
+					<Segment.Group>{credits}</Segment.Group>
+				</Segment.Group>
+			</div>
 		);
 	}
 }

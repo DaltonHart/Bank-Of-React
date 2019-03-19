@@ -1,10 +1,15 @@
 .transactionContainer {
+	display: flex;
 	width: max-content;
-	height: 88vh;
-	overflow: scroll;
-	margin: 0 auto !important;
+	height: 85vh;
+	overflow: hidden;
+	margin: 1em !important;
 }
-
-.transactionContainer::-webkit-scrollbar {
+.transactions {
+	overflow: scroll;
+	margin: 0 !important;
+	overflow-x: hidden;
+}
+.transactions::-webkit-scrollbar {
 	width: 0 !important;
 }
