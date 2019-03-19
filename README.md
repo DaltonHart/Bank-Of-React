@@ -1,5 +1,7 @@
 ## Bank of React
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/DaltonHart/Bank-Of-React.svg)](https://greenkeeper.io/)
+
 Submisson of coding challenge for GA.
 
 To view application clone down the repo and then:
