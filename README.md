@@ -2,7 +2,7 @@
 
 Submisson of coding challenge for GA.
 
-Your application should include:
+Requirements:
 
 - A React app built using the create-react-app package.
 - Data pulled from existing API linked below. We recommend using the built-in fetch
@@ -23,3 +23,11 @@ Your application should include:
 - Your application should be clear and understandable, since your student facing code
   should be beginner friendly! Include comments or documentation briefly explaining
   your thought process and your code.
+
+NOTES:
+
+- Application was built with FIRST component structure in mind.
+- Used Semantic React for simple styling.
+- Implemented moment.js for improved date objects.
+- Reorganized the data set for each endpoint to be newest in date to oldest to more match a real world application
+- The profile PATCH request is not working on the heroku application due to CORS issue. Would have to deploy the application to remove the issue. To demo how the feature would work I used the same data set to manipulate state.
