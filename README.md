@@ -5,7 +5,7 @@ Submisson of coding challenge for GA.
 To view application clone down the repo and then:
 
 ```bash
-    cd bank-of-react
+    cd Bank-of-React
     npm i
     npm start
 ```
