@@ -1,0 +1,10 @@
+.transactionContainer {
+	width: max-content;
+	height: 88vh;
+	overflow: scroll;
+	margin: 0 auto !important;
+}
+
+.transactionContainer::-webkit-scrollbar {
+	width: 0 !important;
+}
