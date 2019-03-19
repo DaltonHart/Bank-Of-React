@@ -15,11 +15,11 @@ class App extends Component {
 			.then(data => this.setState({ user: data }))
 			.catch(error => console.log(error));
 	};
-
+	// on mount fetch user information
 	componentDidMount() {
 		this.fetchUser();
 	}
-
+	// update the user based on the information passed to it from child component
 	updateUser = userupdated => {
 		this.setState({
 			user: userupdated
@@ -31,9 +31,12 @@ class App extends Component {
 
 		return (
 			<div className="app">
+				{/* base nav is set with user information displayed to show unidirectional data flow */}
 				<Nav user={user} />
 				<div className="container">
+					{/* passing down function to update the user and default user value */}
 					<Profile user={user} updateUser={this.updateUser} />
+					{/* Container to fetch transactions and create lists */}
 					<TransactionContainer />
 				</div>
 			</div>

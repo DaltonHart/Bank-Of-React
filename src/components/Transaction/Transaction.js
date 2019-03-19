@@ -5,6 +5,7 @@ import moment from 'moment';
 class Transaction extends Component {
 	render() {
 		const { transaction, type } = this.props;
+		// formating date object into easy to read date with moment
 		let date = moment(transaction.date).format('MMMM Do YYYY');
 
 		return (

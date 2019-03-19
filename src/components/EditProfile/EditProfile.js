@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import { Card, Image, Label, Icon, Input, Button } from 'semantic-ui-react';
+import { Card, Image, Input, Button } from 'semantic-ui-react';
 
 class EditProfile extends Component {
 	render() {
 		const { user, email, city, name } = this.props;
 		let date = moment(user.memberSince).format('MMMM Do YYYY');
-
+		// this component calls the functions from profile and updates the state to reflect the changes here.
 		return (
 			<Card>
 				<Image src="https://i.pinimg.com/originals/b7/21/26/b721265eb826b20e6f91d6643b95c122.jpg" />
@@ -43,8 +43,6 @@ class EditProfile extends Component {
 					</Card.Description>
 					<Card.Description className="saveButtons">
 						<Button.Group>
-							<Button>Cancel</Button>
-							<Button.Or />
 							<Button positive onClick={this.props.updateProfile}>
 								Save
 							</Button>

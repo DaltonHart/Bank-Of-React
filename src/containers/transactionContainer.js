@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './transactionContainer.css';
 import TransactionList from '../components/TransactionList/TransactionList';
 
+//Storing base url for reference across multiple routes
 let baseURL = `https://bank-of-react-api.herokuapp.com`;
 
 class TransactionContainer extends Component {
@@ -28,6 +29,7 @@ class TransactionContainer extends Component {
 			.catch(error => console.log(error));
 	};
 
+	// On mount fetch both credit and debit transactions
 	componentDidMount() {
 		this.fetchDebit();
 		this.fetchCredit();
@@ -38,6 +40,7 @@ class TransactionContainer extends Component {
 
 		return (
 			<div className="transactionContainer">
+				{/* With one Component we can create both Transaction lists passing down the data */}
 				<TransactionList data={debit} type="Debit" />
 				<TransactionList data={credit} type="Credit" />
 			</div>

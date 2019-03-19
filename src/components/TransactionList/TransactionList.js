@@ -4,6 +4,7 @@ import Transaction from '../Transaction/Transaction';
 import moment from 'moment';
 
 class TransactionList extends Component {
+	// function to reorganize data from newest to oldest
 	compare = (a, b) => {
 		const dateA = moment(a.date);
 		const dateB = moment(b.date);
@@ -19,6 +20,7 @@ class TransactionList extends Component {
 	render() {
 		const { data, type } = this.props;
 		let total = 0;
+		// sort the transactions and then get a total from all transactions. This works dynamically depending on the data passed down from parent.
 		data.sort(this.compare);
 		data.forEach(transaction => {
 			let amount = Math.round(100 * transaction.amount) / 10;

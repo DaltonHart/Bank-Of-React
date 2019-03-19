@@ -29,6 +29,7 @@ class Profile extends Component {
 		this.setState({
 			updating: false
 		});
+
 		// as a dev work around I am updating state as so to reflect represent the changes that would occur.
 		let user = {
 			email: this.state.email,
@@ -46,6 +47,7 @@ class Profile extends Component {
 	};
 
 	editProfile = () => {
+		//setting the inital input values via the information passed down from parent
 		this.setState({
 			updating: true,
 			email: this.props.user.email,
@@ -59,6 +61,7 @@ class Profile extends Component {
 		const { updating, email, city, name } = this.state;
 		let date = moment(user.memberSince).format('MMMM Do YYYY');
 
+		// swapping edit forms vs the default card based on an edit state
 		let view = updating ? (
 			<EditProfile
 				user={user}
