@@ -2,6 +2,14 @@
 
 Submisson of coding challenge for GA.
 
+To view application clone down the repo and then:
+
+```bash
+    cd bank-of-react
+    npm i
+    npm start
+```
+
 Requirements:
 
 - A React app built using the create-react-app package.
